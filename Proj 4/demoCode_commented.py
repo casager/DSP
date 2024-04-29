@@ -51,8 +51,8 @@ invert = np.zeros(4096, dtype = 'complex')
 #prep an additional array for your spectrogram
 
 #FIXME (2 lines)
-spectrogram_size = (512, len(songArray)//2048)  # Adjusted based on the length of the audio
-spectrogram = np.zeros(spectrogram_size, dtype='float32')
+# spectrogram_size = (512, len(songArray)//2048)  # Adjusted based on the length of the audio
+# spectrogram = np.zeros(spectrogram_size, dtype='float32')
 
 '''
 Calculate filtered song
@@ -83,6 +83,7 @@ Add your code here
 plt.specgram(output[:, 0], NFFT=4096, Fs=Fs, noverlap=2048)
 plt.xlabel('Time')
 plt.ylabel('Frequency')
+plt.ylim() #added this
 plt.title('Spectrogram')
 plt.colorbar()
 plt.show()
